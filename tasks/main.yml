@@ -1,0 +1,5 @@
+---
+- name: remove unwanted software
+  apt: pkg={{ item }} state=absent update_cache=true
+  with_items: {{ ubuntu_unwanted_software }}
+  when: ubuntu_unwanted_software is defined
